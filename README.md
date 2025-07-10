@@ -1,139 +1,105 @@
-==================================================================
-                    SUDOKU GAME (C++ Console Project)
-==================================================================
+# Sudoku Game (C++ Console Project)
 
-A modular, object-oriented Sudoku puzzle game and solver implemented in C++. 
-It demonstrates clean architecture, STL usage, and separation of concerns between 
-board logic, solving, user interaction, and optional advanced features.
+A modular, object-oriented Sudoku puzzle game and solver implemented in C++. This project demonstrates clean architecture, STL usage, and clear separation of concerns between board logic, solving, user interaction, and optional features.
 
-------------------------------------------------------------------
-FEATURES
-------------------------------------------------------------------
+---
+
+## Features
 
 - Console-based 9×9 Sudoku board
 - Load and save puzzles from/to files
 - Enter and validate user moves
-- Automatic puzzle solving using backtracking
-- (Optional) Puzzle generation with unique solutions
-- (Optional) Advanced solving techniques (e.g., naked pairs)
+- Automatically solve puzzles using backtracking
+- Puzzle generation with unique solutions
 
-------------------------------------------------------------------
-PROJECT STRUCTURE
-------------------------------------------------------------------
+---
 
+## Project Structure
+
+```bash
 SUDOKU-GAME/
 │
-├── include/               --> Header files
+├── include/
 │   ├── SudokuBoard.hpp
 │   ├── SudokuGame.hpp
 │   ├── SudokuGenerator.hpp
 │   └── SudokuSolver.hpp
-│
-├── src/                   --> Implementation files
+├── src/
 │   ├── SudokuBoard.cpp
 │   ├── SudokuGame.cpp
 │   ├── SudokuGenerator.cpp
 │   └── SudokuSolver.cpp
-│
 ├── data/
-|   ├── puzzle_input.txt   --> Input/output puzzle files (optional)
-│     
-├── main.cpp               --> Entry point
-├── sudoku_game.exe               --> Compiled executable (Windows)
-└── README.txt             --> This file
+│   └── puzzle_input.txt
+├── main.cpp
+├── sudoku_game.exe
+└── README.md
+```
 
-------------------------------------------------------------------
-CLASS RESPONSIBILITIES
-------------------------------------------------------------------
+---
 
-- SudokuBoard:
+## Class Responsibilities
+
+- **SudokuBoard**:
   - Manages the 9×9 grid
   - Handles validation and board display
-  - Loads and saves puzzles
+  - Loads and saves puzzles to/from files
 
-- SudokuSolver:
+- **SudokuSolver**:
   - Solves puzzles using backtracking
 
-- SudokuGame:
+- **SudokuGame**:
   - Manages the user interface and game flow
+  - Coordinates between board and solver
 
-- SudokuGenerator:
-  - Generates full puzzles and removes numbers to create challenges
+- **SudokuGenerator**:
+  - Creates complete puzzles and removes values to form playable boards
 
-------------------------------------------------------------------
-HOW TO BUILD
-------------------------------------------------------------------
+---
 
-If you're using g++ (on Windows via MinGW, Git Bash, or WSL):
+## How to Build
 
-    g++ main.cpp src/*.cpp -o sudoku_game.exe
+If you're using g++ (Windows with MinGW/Git Bash or Linux/macOS/WSL):
 
-Then run:
+```bash
+g++ main.cpp src/*.cpp -o sudoku_game.exe
+```
 
-    ./sudoku_game    (Linux/Mac/WSL)
-    sudoku_game.exe  (Windows)
+---
 
-------------------------------------------------------------------
-PUZZLE FILE FORMAT
-------------------------------------------------------------------
+## How to Run
 
-A 9x9 text file with digits 0–9 (0 = empty cell), one line per row.
+```bash
+# Linux/macOS/WSL (in terminal):
+./sudoku_game
 
-Example:
+# Windows (in Command Prompt/PowerShell):
+sudoku_game.exe
+```
 
--------------------------------------
-5 3 . | . 7 . | . . .
-6 . . | 1 9 5 | . . .
-. 9 8 | . . . | . 6 .
--------------------------------------
-8 . . | . 6 . | . . 3
-4 . . | 8 . 3 | . . 1
-7 . . | . 2 . | . . 6
--------------------------------------
-. 6 . | . . . | 2 8 .
-. . . | 4 1 9 | . . 5
-. . . | . 8 . | . 7 9
--------------------------------------
+---
 
-------------------------------------------------------------------
-SAMPLE GAME FLOW
-------------------------------------------------------------------
+## Learning Objectives
 
-1) Program starts, prints current board
-2) User is shown options:
-   1. Enter a move
-   2. Solve automatically
-   3. Load puzzle from file
-   4. Save puzzle to file
-   5. Exit
+- Apply object-oriented programming (OOP) principles in C++
+- Use STL containers and algorithms (e.g., `vector`, `iota`, `shuffle`)
+- Implement a modular and maintainable architecture
+- Separate game logic from input/output (UI)
+- Perform input validation and file I/O
+- Practice building multi-file C++ projects
 
-Example interaction:
+---
 
-  Choice: 1
-  Enter row (1–9), column (1–9), and value (1–9): 1 3 4
-  Move accepted!
+## Author
 
-  Choice: 2
-  Puzzle solved!
-
-------------------------------------------------------------------
-LEARNING OBJECTIVES
-------------------------------------------------------------------
-
-- Apply OOP principles and STL in C++
-- Implement modular design
-- Use vector, iota, shuffle, and file I/O
-- Separate game logic from user interface
-
-------------------------------------------------------------------
-AUTHOR
-------------------------------------------------------------------
-
-Abdelrahman Osama  
+**Abdelrahman Osama**  
 Bachelor of Computer and Systems Engineering
 
-------------------------------------------------------------------
-LICENSE
-------------------------------------------------------------------
+---
 
-MIT License — Free to use, modify, and share
+## License
+
+This project is licensed under the **MIT License**.
+
+You are free to use, modify, and distribute it under the terms of the license.
+
