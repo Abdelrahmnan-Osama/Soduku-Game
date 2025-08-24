@@ -1,4 +1,4 @@
-#include "../include/SudokuGame.hpp"
+#include "SudokuGame.hpp"
 
 void SudokuGame::readMove(int &row, int &col, int &value) const
 {

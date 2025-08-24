@@ -1,4 +1,4 @@
-#include "../include/SudokuGenerator.hpp"
+#include "SudokuGenerator.hpp"
 
 void SudokuGenerator::createSolvedBoard()
 {
